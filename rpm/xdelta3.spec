@@ -5,6 +5,7 @@ Release: 1
 License: Apache-2.0
 URL: https://github.com/sailfishos/xdelta
 Source0: %{name}-%{version}.tar.gz
+Patch1: 0001-Increase-test-timeouts-to-prevent-build-failures.patch
 BuildRequires: cmake
 
 %description
@@ -12,7 +13,7 @@ This package provides the xdelta3 command-line tool for VCDIFF differential
 compression, a.k.a. delta compression.
 
 %prep
-%setup -q -n %{name}-%{version}/upstream/xdelta3
+%autosetup -p2 -n %{name}-%{version}/upstream/xdelta3
 
 %build
 %cmake . \
